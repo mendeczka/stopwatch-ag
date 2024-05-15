@@ -1,10 +1,8 @@
-type ButtonProps = {
-    label: string;
-    onClick?: () => void;
-};
-export const Button = ({label}: ButtonProps) => {
+import {ButtonProps} from "../../types/btn.ts";
+
+export const Button = ({label, onClick}: ButtonProps) => {
     return (
-        <button>
+        <button onClick={onClick}>
             {label}
         </button>
     );
