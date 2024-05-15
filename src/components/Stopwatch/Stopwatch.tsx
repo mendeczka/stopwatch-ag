@@ -9,6 +9,7 @@ export const Stopwatch = () => {
     const [totalTime, setTotalTime] = useState(0);
     const [lapTime, setLapTime] = useState(0);
     const [laps, setLaps] = useState<number[]>([]);
+    const [showSummary, setShowSummary] = useState(false);
 
     useEffect(() => {
         if (isRunning) {
@@ -24,10 +25,12 @@ export const Stopwatch = () => {
 
     const handleStart = () => {
         setIsRunning(true);
+        setShowSummary(false);
     };
 
     const handleStop = () => {
         setIsRunning(false);
+        setShowSummary(true);
     };
     const handleReset = () => {
         setTotalTime(0);
@@ -38,16 +41,20 @@ export const Stopwatch = () => {
         setLaps([...laps, lapTime]);
         setLapTime(0);
     };
+
+    if(showSummary) {
+        return <Summary totalTime={totalTime} laps={laps}/>
+    }
+
     return (
         <div>
-            <TimeDisplay label="Main" time={totalTime}/>
-            <TimeDisplay label="Laps" time={lapTime}/>
+            <TimeDisplay label="Full time" time={totalTime}/>
+            <TimeDisplay label="Lap time" time={lapTime}/>
             <Button label="Start" type='primary' onClick={handleStart}/>
             <Button label="Stop" type='secondary' onClick={handleStop}/>
             <Button label="Reset" type='danger' onClick={handleReset}/>
             <Button label="Lap" type='default' onClick={handleLap}/>
             {lapTime ? <LapsTable laps={laps}/> : null}
-            <Summary/>
         </div>
     );
 };
