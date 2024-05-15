@@ -1,8 +1,4 @@
-type LapEntryProps = {
-    lapNumber: number;
-    lapTime: number;
-}
-
+import {LapEntryProps} from "../../types/table.ts";
 
 export const LapEntry = ({lapNumber, lapTime}: LapEntryProps) => {
     return (

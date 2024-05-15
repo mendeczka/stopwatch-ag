@@ -1,8 +1,6 @@
+import { LapsTableProps } from "../../types/table.ts";
 import {LapEntry} from "./LapEntry.tsx";
 
-type LapsTableProps = {
-    laps: number[];
-}
 
 export const LapsTable = ({laps}: LapsTableProps) => {
     return (
