@@ -12,7 +12,9 @@ export const LapsTable = ({laps}: LapsTableProps) => {
             </tr>
             </thead>
             <tbody>
-            {laps.map((lap,index) => <LapEntry key={index} lapTime={lap} lapNumber={index+1}/>)}
+            {laps.map((lap,index) => (
+                <LapEntry key={index} lapTime={lap} lapNumber={index+1}/>
+            ))}
             </tbody>
         </table>
     );
