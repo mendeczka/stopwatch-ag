@@ -42,10 +42,10 @@ export const Stopwatch = () => {
         <div>
             <TimeDisplay label="Main" time={totalTime}/>
             <TimeDisplay label="Laps" time={lapTime}/>
-            <Button label="Start" onClick={handleStart}/>
-            <Button label="Stop" onClick={handleStop}/>
-            <Button label="Reset" onClick={handleReset}/>
-            <Button label="Lap" onClick={handleLap}/>
+            <Button label="Start" type='primary' onClick={handleStart}/>
+            <Button label="Stop" type='secondary' onClick={handleStop}/>
+            <Button label="Reset" type='danger' onClick={handleReset}/>
+            <Button label="Lap" type='default' onClick={handleLap}/>
             {lapTime ? <LapsTable laps={laps}/> : null}
             <Summary/>
         </div>

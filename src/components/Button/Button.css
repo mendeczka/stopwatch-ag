@@ -1,0 +1,17 @@
+.btn {
+    padding: 10px 20px;
+    margin: 5px;
+    color: white;
+}
+
+.btn-primary {
+    background-color: #06b50d;
+}
+
+.btn-secondary {
+    background-color: blue;
+}
+
+.btn-danger {
+    background-color: red;
+}
