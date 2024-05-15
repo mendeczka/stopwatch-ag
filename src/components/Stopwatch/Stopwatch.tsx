@@ -19,15 +19,24 @@ export const Stopwatch = () => {
         }, [isRunning]);
 
 
+        const handleStart = () => {
+                setIsRunning(true);
+        };
 
-    return (
+        const handleStop = () => {
+                setIsRunning(false);
+        };
+        const handleReset = () => {
+                setTotalTime(0);
+        };
+        return (
         <div>
             <h3>rest of the components</h3>
             <TimeDisplay label="Main" time={totalTime}/>
             <TimeDisplay label="Laps" time={0} />
-            <Button label="Start"/>
-            <Button label="Stop"/>
-            <Button label="Reset"/>
+            <Button label="Start" onClick={handleStart}/>
+            <Button label="Stop" onClick={handleStop}/>
+            <Button label="Reset" onClick={handleReset}/>
             <Button label="Lap"/>
             <LapsTable/>
             <Summary/>
