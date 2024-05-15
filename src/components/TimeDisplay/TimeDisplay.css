@@ -1,0 +1,18 @@
+.time-display {
+    margin-bottom: 20px;
+    text-align: center;
+}
+.time-display h2 {
+    margin-bottom: 10px;
+}
+ .time-display-time {
+     font-size: 3em;
+     font-weight: bold;
+     color: #dad7d7;
+ }
+
+ .time-display-lap {
+     font-size: 2em;
+     font-weight: bold;
+     color: #c1afaf;
+ }

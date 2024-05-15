@@ -1,5 +1,6 @@
 import { LapsTableProps } from "../../types/table.ts";
 import {LapEntry} from "./LapEntry.tsx";
+import "./LapsTable.css";
 
 
 export const LapsTable = ({laps}: LapsTableProps) => {

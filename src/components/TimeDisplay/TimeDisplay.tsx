@@ -1,13 +1,16 @@
 import {TimeDisplayProps} from "../../types/time.ts";
 import {formatTime} from "../../utils/formatTime.ts";
+import "./TimeDisplay.css"
 
 export const TimeDisplay = ({label, time}: TimeDisplayProps) => {
 
+    const isLapTime = label.toLowerCase().includes('okrążenia');
+    const timeClass = isLapTime ? 'time-display-lap' : 'time-display-time';
+
     return (
-        <div>
+        <div className='time-display'>
             <h2>{label}</h2>
-            {/*<div>{minutes} : {seconds} : {miliseconds}</div>*/}
-            <div>{formatTime(time)}</div>
+            <div className={timeClass}>{formatTime(time)}</div>
         </div>
     );
 };
