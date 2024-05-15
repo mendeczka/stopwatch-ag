@@ -5,40 +5,48 @@ import {Summary} from "../Summary/Summary.tsx";
 import {useEffect, useState} from "react";
 
 export const Stopwatch = () => {
-        const [isRunning, setIsRunning] = useState(false);
-        const [totalTime, setTotalTime] = useState(0);
+    const [isRunning, setIsRunning] = useState(false);
+    const [totalTime, setTotalTime] = useState(0);
+    const [lapTime, setLapTime] = useState(0);
+    const [laps, setLaps] = useState<number[]>([]);
 
-        useEffect(() => {
-                if(isRunning) {
-                const interval = setInterval(() => {
-                        setTotalTime((prev) => prev + 100);
-                }, 100)
+    useEffect(() => {
+        if (isRunning) {
+            const interval = setInterval(() => {
+                setTotalTime((prev) => prev + 100);
+                setLapTime((prev) => prev + 100);
+            }, 100)
 
-                return () => clearInterval(interval)
-                }
-        }, [isRunning]);
+            return () => clearInterval(interval)
+        }
+    }, [isRunning]);
 
 
-        const handleStart = () => {
-                setIsRunning(true);
-        };
+    const handleStart = () => {
+        setIsRunning(true);
+    };
 
-        const handleStop = () => {
-                setIsRunning(false);
-        };
-        const handleReset = () => {
-                setTotalTime(0);
-        };
-        return (
+    const handleStop = () => {
+        setIsRunning(false);
+    };
+    const handleReset = () => {
+        setTotalTime(0);
+        setLapTime(0);
+        setLaps([]);
+    };
+    const handleLap = () => {
+        setLaps([...laps, lapTime]);
+        setLapTime(0);
+    };
+    return (
         <div>
-            <h3>rest of the components</h3>
             <TimeDisplay label="Main" time={totalTime}/>
-            <TimeDisplay label="Laps" time={0} />
+            <TimeDisplay label="Laps" time={lapTime}/>
             <Button label="Start" onClick={handleStart}/>
             <Button label="Stop" onClick={handleStop}/>
             <Button label="Reset" onClick={handleReset}/>
-            <Button label="Lap"/>
-            <LapsTable/>
+            <Button label="Lap" onClick={handleLap}/>
+            {lapTime ? <LapsTable laps={laps}/> : null}
             <Summary/>
         </div>
     );

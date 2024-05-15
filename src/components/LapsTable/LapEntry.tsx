@@ -1,9 +1,14 @@
+type LapEntryProps = {
+    lapNumber: number;
+    lapTime: number;
+}
 
-export const LapEntry = () => {
+
+export const LapEntry = ({lapNumber, lapTime}: LapEntryProps) => {
     return (
         <tr>
-            <td>Okrążenie 1</td>
-            <td>00:10:06</td>
+            <td>Okrążenie {lapNumber}</td>
+            <td>{lapTime}</td>
         </tr>
     );
 };

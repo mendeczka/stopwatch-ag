@@ -1,6 +1,10 @@
 import {LapEntry} from "./LapEntry.tsx";
 
-export const LapsTable = () => {
+type LapsTableProps = {
+    laps: number[];
+}
+
+export const LapsTable = ({laps}: LapsTableProps) => {
     return (
         <table>
             <thead>
@@ -10,7 +14,7 @@ export const LapsTable = () => {
             </tr>
             </thead>
             <tbody>
-                <LapEntry />
+            {laps.map((lap,index) => <LapEntry key={index} lapTime={lap} lapNumber={index+1}/>)}
             </tbody>
         </table>
     );
