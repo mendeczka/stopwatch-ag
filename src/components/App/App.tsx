@@ -5,7 +5,7 @@ export const App = () => {
 
   return (
     <>
-        <h1>Stopwatch Component</h1>
+        <h1>Time and Laps Tracker</h1>
         <Stopwatch/>
     </>
   )

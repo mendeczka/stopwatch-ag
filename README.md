@@ -1,30 +1,101 @@
-# React + TypeScript + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Time and Laps Tracker
 
-Currently, two official plugins are available:
+Time and Laps Tracker is a simple application for tracking time and laps. It uses React for component management and CSS for styling, and is built with Vite for fast development.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## Expanding the ESLint configuration
+## Table of Contents
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- [Description](#description)
+- [Technologies Used](#technologies-used)
+- [Installation](#installation)
+- [Running the Project](#running-the-project)
+- [Components](#components)
+- [Styling](#styling)
+- [Sources](#Sources)
+- [Contributing](#contributing)
+- [License](#license)
 
-- Configure the top-level `parserOptions` property like this:
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
+##  Technologies Used
+
+- **React 18.2.66**: A JavaScript library for building user interfaces.
+- **TypeScript 5.2.2**: A typed superset of JavaScript that helps in building robust and maintainable code.
+- **Vite 5.2.0**: A build tool that aims to provide a faster and leaner development experience for modern web projects.
+- **CSS**: Cascading Style Sheets for styling the application.
+- **npm** / **Yarn**: Package managers to handle dependencies.
+
+
+## Installation
+
+To run the project locally, follow these steps:
+
+1. **Clone the repository:**
+    ```bash
+    git clone https://github.com/your-repo.git
+    ```
+
+2. **Navigate to the project directory:**
+    ```bash
+    cd time-and-laps-tracker
+    ```
+
+3. **Install dependencies using npm:**
+    ```bash
+    npm install
+    ```
+   or using Yarn:
+    ```bash
+    yarn install
+    ```
+
+## Running the Project
+To run the application in development mode, use the following command:
+
+Using npm:
+```bash
+npm run dev
 ```
+or using yarn:
+```bash
+yarn dev
+```
+## Components
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+`TimeDisplay.tsx`
+A component that displays time and a label.
+
+Props:
+`time: number` - Time in milliseconds.
+`label: string` - Label to display (e.g., "Time", "Lap Time").
+
+`LapsTable.tsx`
+A table that displays a list of laps.
+
+Props:
+`laps: number[]` - Array of lap times in milliseconds.
+
+`LapEntry.tsx`
+A component representing a single lap entry in the table.
+
+Props:
+`lapNumber: number` - The lap number.
+`lapTime: number` - The lap time in milliseconds.
+
+## Styling
+
+CSS file used for styling components:
+
+    `Classes`:
+        `.button` - General button styling.
+        `.button-primary, .button-secondary, .button-danger` - Styling for different types of buttons.
+        `table, th, td` - Styling for the table and its elements.
+        `.time-display` - Styling for the time display.
+        `.time-display-time` - Styling for the main time counter.
+        `.time-display-lap` - Styling for the lap counter.
+
+
+## Sources
+
+This app was inspired by the MG from Frontowcy
+
