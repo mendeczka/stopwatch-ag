@@ -10,6 +10,7 @@ Time and Laps Tracker is a simple application for tracking time and laps. It use
 - [Technologies Used](#technologies-used)
 - [Installation](#installation)
 - [Running the Project](#running-the-project)
+- [Project structure](#project-structure)
 - [Components](#components)
 - [Styling](#styling)
 - [Sources](#Sources)
@@ -60,6 +61,51 @@ or using yarn:
 ```bash
 yarn dev
 ```
+
+## Project structure
+
+````
+stopwatch-ag/
+├── public/
+├── src/
+│   ├── assets/
+│   ├── components/
+│   │   ├── App/
+│   │   │   ├── App.css
+│   │   │   └── App.tsx
+│   │   ├── Button/
+│   │   │   ├── Button.css
+│   │   │   └── Button.tsx
+│   │   ├── LapsTable/
+│   │   │   ├── LapEntry.css
+│   │   │   ├── LapTable.css
+│   │   │   └── LapTable.tsx
+│   │   ├── Stopwatch/
+│   │   │   └── Stopwatch.tsx
+│   │   ├── Summary/
+│   │   │   └── Summary.tsx
+│   │   ├── TimeDisplay/
+│   │   │   ├── TimeDisplay.css
+│   │   │   └── TimeDisplay.tsx
+│   ├── types/
+│   │   ├── btn.ts
+│   │   ├── summary.ts
+│   │   ├── tabley.ts
+│   │   └── time.ts
+│   ├── utils/
+│   │   └── formatTime.ts
+│   ├── index.css
+│   ├── main.tsx
+│   └── vite-env.d.ts
+├── index.html
+├── package.json
+├── README.md
+├── tsconfig.json
+├── tsconfig.node.json
+└── vite.config.ts
+````
+
+
 ## Components
 
 `TimeDisplay.tsx`
