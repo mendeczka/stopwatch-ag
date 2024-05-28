@@ -14,8 +14,6 @@ Time and Laps Tracker is a simple application for tracking time and laps. It use
 - [Components](#components)
 - [Styling](#styling)
 - [Sources](#Sources)
-- [Contributing](#contributing)
-- [License](#license)
 
 
 ##  Technologies Used
